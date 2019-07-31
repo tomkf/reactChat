@@ -34,11 +34,11 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/getposts')
+    fetch('http://localhost:3001/api/messages')
     .then(res => res.json())
     .then((oldMsg) => {
      this.setState({ messages: oldMsg });
-     console.log(oldMsg.name);
+     console.log(oldMsg);
  });
 
   const url = 'ws://localhost:3001';
