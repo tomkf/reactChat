@@ -1,44 +1,51 @@
 const express = require("express");
 const SocketServer = require("ws").Server;
 //const uuidv4 = require('uuid/v4');
-const mysql = require("mysql");
+// const mysql = require("mysql");
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password1",
-  insecureAuth: true,
-  database: "nodemysql"
-});
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "password1",
+//   insecureAuth: true,
+//   database: "nodemysql"
+// });
 
-db.connect(function(err) {
-  if (err) throw err;
-  console.log("CONNECTED!");
-});
+// db.connect(function(err) {
+//   if (err) throw err;
+//   console.log("CONNECTED!");
+// });
 
 const PORT = /*process.env.port ||*/ 3001;
 const app = express();
 
-//create DB
-app.get("/createdb", (req, res) => {
-  let sql = "CREATE DATABASE nodemysql";
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send("DATABASE CREATED!");
-  });
-});
+let allowCrossDomain = function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+};
+app.use(allowCrossDomain);
 
-//create table
-app.get("/createpoststable", (req, res) => {
-  let sql =
-    "CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))";
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    console.log(result);
-    res.send("Posts table created...");
-  });
-});
+//create DB
+// app.get("/createdb", (req, res) => {
+//   let sql = "CREATE DATABASE nodemysql";
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send("DATABASE CREATED!");
+//   });
+// });
+
+// //create table
+// app.get("/createpoststable", (req, res) => {
+//   let sql =
+//     "CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))";
+//   db.query(sql, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send("Posts table created...");
+//   });
+// });
 
 // // Insert post 1
 // app.get("/addpost1", (req, res) => {
@@ -51,15 +58,37 @@ app.get("/createpoststable", (req, res) => {
 //   });
 // });
 
-// app.get('/api/customers', (req, res) => {
-//     const customers = [
-//       {id: 1, name: 'Joe Blogs', email: 'jblogs@gmail.com', content: "Interesting post Phil. It's great to see that a blog really can come alive when the comments update in real-time. The commenting system becomes a conversation platform.", stamp: "July 30 2019" },
-//       {id: 2, name: 'Phil Leggetter', email: 'leggeter1981@shaw.ca', content: "Thanks Joe (great name by the way). I'm pleased you see the benefits of adding realtime functionality to a commenting system. It really can draw users in and turn a standard blogpost into a place where conversation takes place. Old style commenting is still great, but real-time comments are really engaging and can make a page much more sticky and engaging.", stamp: July 30 2019 },
-//       {id: 3, name: 'Max Williams', email: 'maxWill@gmail.com', content: "Phil - great post. Keep up the good work.", stamp: July 30 2019 },
-//     ];
+//this is where I integrate mySQL
 
-//     res.json(customers);
-//   });
+app.get("/api/messages", (req, res) => {
+  const dbMessages = [
+    {
+      id: 1,
+      name: "Joe Blogs",
+      email: "jblogs@gmail.com",
+      content:
+        "Interesting post Phil. It's great to see that a blog really can come alive when the comments update in real-time. The commenting system becomes a conversation platform.",
+      stamp: "July 30 2019"
+    },
+    {
+      id: 2,
+      name: "Phil Leggetter",
+      email: "leggeter1981@shaw.ca",
+      content:
+        "Thanks Joe (great name by the way). I'm pleased you see the benefits of adding realtime functionality to a commenting system. It really can draw users in and turn a standard blogpost into a place where conversation takes place. Old style commenting is still great, but real-time comments are really engaging and can make a page much more sticky and engaging.",
+      stamp: "July 30 2019"
+    },
+    {
+      id: 3,
+      name: "Max Williams",
+      email: "maxWill@gmail.com",
+      content: "Phil - great post. Keep up the good work.",
+      stamp: "July 30 2019"
+    }
+  ];
+
+  res.json(dbMessages);
+});
 
 const server = app.listen(PORT, () => {
   console.log(`WebSocket Server Running on Port: ${PORT}`);
