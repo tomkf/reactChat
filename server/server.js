@@ -21,7 +21,7 @@ const PORT = /*process.env.port ||*/ 3001;
 const app = express();
 
 const table =
-  "CREATE TABLE posts(id int AUTO_INCREMENT, name VARCHAR(30), email VARCHAR(50), content VARCHAR(500), stamp VARCHAR(40), PRIMARY KEY(id))";
+  "CREATE TABLE IF NOT EXISTS posts(id int AUTO_INCREMENT, name VARCHAR(30), email VARCHAR(50), content VARCHAR(500), stamp VARCHAR(40), PRIMARY KEY(id))";
 
 db.query("CREATE DATABASE IF NOT EXISTS ??", newDb, function(err, results) {
   if (err) {
@@ -72,15 +72,14 @@ let allowCrossDomain = function(req, res, next) {
 
 //  Insert post 1
 app.get("/addpost1", (req, res) => {
-  let post = {
-    name: "Joe Blogs",
-    email: "jblogs@gmail.com",
-    content:
-      "Interesting post Phil. It's great to see that a blog really can come alive when the comments update in real-time. The commenting system becomes a conversation platform.",
-    stamp: "July 30 2019"
-  };
-  let sql = "INSERT INTO posts SET ?";
-  let query = db.query(sql, post, (err, result) => {
+  let pname = "Joe Blogs";
+  let pemail = "jblogs@gmail.com";
+  let pcontent =
+    "Interesting post Phil. It's great to see that a blog really can come alive when the comments update in real-time. The commenting system becomes a conversation platform.";
+  let pstamp = "July 30 2019";
+  let sql =
+    "INSERT INTO `posts` (`name`, `email`, `content`, `stamp`) VALUES (pname, pemail, pcontent, pstamp)";
+  let query = db.query(sql, (err, result) => {
     if (err) throw err;
     console.log(result);
     res.send("Post 1 added...");
