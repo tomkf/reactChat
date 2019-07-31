@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.jsx';
 import ChatBar from './ChatBar.jsx';
 import MessageList from './MessageList.jsx';
 const uuidv4 = require('uuid/v4');
