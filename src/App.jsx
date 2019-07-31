@@ -34,7 +34,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/messages')
+    fetch('http://localhost:3001/getposts')
     .then(res => res.json())
     .then((oldMsg) => {
      this.setState({ messages: oldMsg });
