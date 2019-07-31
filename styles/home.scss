@@ -11,25 +11,15 @@ a{
     background: #f6ecec;
     color: rgb(60, 60, 60);
     font-family: 'Open Sans', sans-serif;
-    font-size: 17px;
     margin: 70px 0;
+    font-size: 14px;
+    font-weight: 500;
   }
-
-  // .chatbar {
-  //   background: teal;
-  //   //border-top: 1px solid rgb(60, 60, 60);
-  //   bottom: 0;
-  //   display: flex;
-  //   left: 0;
-  //   padding: 5px;
-  //   position: fixed;
-  //   right: 0;
-  // }
-
 
 .chat-bar{
   align-items: center;
 }
+
 
   .chatbar-message,
   .chatbar-username {
@@ -70,6 +60,7 @@ a{
   }
 
 
+
   .message-content,
   .message-username {
     overflow: hidden;
@@ -103,21 +94,24 @@ a{
     margin: 30%;
   }
 
-  .content-box {
+   .content-box {
 background: white;
 margin: auto;
 padding: 2%;
 width: 78%;
 height: 88%;
-border-radius: 6px;
-}
+border-radius: 10px;
+margin-top: -58px;
+ }
  
 .submit-button {
-  background: red;
+  margin-top: -9px;
+  background: #ce2929;
   color: #fff;
   height: 31px;
-  border-radius: 11px;
+  border-radius: 9px;
   width: 172px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h4{
@@ -130,6 +124,7 @@ form {
   font-size: 14px;
   line-height: 24px;
   border-radius: 10px;
+  
 }
 
 input {
@@ -137,6 +132,9 @@ input {
   display: block;
   border: 1px solid #999;
   height: 15px;
+  margin-bottom: 6px;
+  font-weight: light;
+
 }
 
 textarea {
@@ -145,4 +143,45 @@ textarea {
   display: block;
 }
 
+small{
+  // position: absolute;
+  font-size: 80%;
+  top: -2px;
+  padding-left: 4px;
+}
+
+#toolTip{
+  position: absolute;
+  margin-left: 2px;
+  font-size: 12px;
+  background-color: #272020;
+  color: white;
+  height: 15px;
+  border-radius: 5px;
+  width: 127px;
+  padding-top: 6px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0.9;
+  text-shadow: -1px 1px 17px;
+  z-index: 22;}
+
+#test{       
+  position: absolute;
+  margin-left: 2px;
+  font-size: 12px;
+  background-color: #272020;
+  color: white;
+  height: 15px;
+  border-radius: 5px;
+  width: 127px;
+  padding-top: 6px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0.9;
+  text-shadow: -1px 1px 17px;
+  z-index: 22;
+}
 
