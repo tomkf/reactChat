@@ -19,8 +19,8 @@ class App extends Component {
     const newMessage = {
      content: message.content,
      email: message.email,
-     username:  message.name,
-     timeStamp: message.stamp,
+     name:  message.name,
+     stamp: message.stamp,
      type:'incomingMessage',
      key: uuidv4() //didn't help get rid of error message
     }
@@ -38,7 +38,7 @@ class App extends Component {
     .then(res => res.json())
     .then((oldMsg) => {
      this.setState({ messages: oldMsg });
-     console.log(oldMsg);
+     console.log(oldMsg.name);
  });
 
   const url = 'ws://localhost:3001';
