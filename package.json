@@ -22,6 +22,9 @@
     "url": "https://github.com/noahlotzer/react-simple-boilerplate/issues"
   },
   "homepage": "https://github.com/noahlotzer/react-simple-boilerplate",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -33,6 +36,7 @@
     "eslint-plugin-react": "^6.10.3",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
+    "sockjs-client": "^1.1.2",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4"
@@ -40,7 +44,8 @@
   "dependencies": {
     "babel-loader": "^7.0.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",    
+    "uuid": "^3.3.2"
   },
   "main": "server.js"
 }
