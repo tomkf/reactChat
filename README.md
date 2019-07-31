@@ -19,9 +19,7 @@ type in http://localhost:3000 on the browser
 
 
 
-====================
-React Boilerplate
-=====================
+### React Boilerplate
 
 A minimal and light dev environment for ReactJS.
 
