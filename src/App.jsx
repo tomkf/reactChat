@@ -31,7 +31,16 @@ class App extends Component {
     this.sendMessage(message_notification);
     this.setState({ currentUser: {name: userName} }, () => console.log(this.state));
   }
+
+
   componentDidMount() {
+    fetch('http://localhost:3001/api/messages')
+    .then(res => res.json())
+    .then((oldMsg) => {
+     this.setState({ messages: oldMsg });
+     console.log(oldMsg);
+ });
+
   const url = 'ws://localhost:3001';
     this.socketServer = new WebSocket(url);
     this.socketServer.onopen = event => {
@@ -56,6 +65,8 @@ class App extends Component {
         console.log("Unknown event type " + data.type);
       }
     };
+ 
+
   }
   render() {
     return (
