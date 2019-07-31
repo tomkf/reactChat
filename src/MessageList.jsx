@@ -3,7 +3,6 @@ import Message from './Message.jsx';
 
 export default class MessageList extends React.Component {
 
-
   render() {
     const displaymessages = this.props.messages.map(message => (
       message.type === "incomingNotification" ?
@@ -22,5 +21,4 @@ export default class MessageList extends React.Component {
     )
   }
 };
-
 

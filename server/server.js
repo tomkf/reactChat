@@ -1,9 +1,56 @@
 const express = require("express");
 const SocketServer = require("ws").Server;
 //const uuidv4 = require('uuid/v4');
+const mysql = require("mysql");
+
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "password1",
+  insecureAuth: true,
+  database: "nodemysql"
+});
+
+db.connect(function(err) {
+  if (err) throw err;
+  console.log("CONNECTED!");
+});
 
 const PORT = /*process.env.port ||*/ 3001;
 const app = express();
+
+//create DB
+app.get("/createdb", (req, res) => {
+  let sql = "CREATE DATABASE nodemysql";
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send("DATABASE CREATED!");
+  });
+});
+
+//create table
+app.get("/createpoststable", (req, res) => {
+  let sql =
+    "CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))";
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    console.log(result);
+    res.send("Posts table created...");
+  });
+});
+
+// // Insert post 1
+// app.get("/addpost1", (req, res) => {
+//   let post = { title: "Post One", body: "This is post number one" };
+//   let sql = "INSERT INTO posts SET ?";
+//   let query = db.query(sql, post, (err, result) => {
+//     if (err) throw err;
+//     console.log(result);
+//     res.send("Post 1 added...");
+//   });
+// });
+
 const server = app.listen(PORT, () => {
   console.log(`WebSocket Server Running on Port: ${PORT}`);
 });
