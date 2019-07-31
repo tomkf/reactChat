@@ -74,7 +74,7 @@ export default class ChatBar extends React.Component {
 
    if (this.refInputEmail.value == "") {
     this.state.isEmail = false
-     this.handleEmail()
+     return this.handleEmail()
   } else {
     this.state.isEmail = false
     this.props.addMessage(message)
@@ -89,17 +89,11 @@ export default class ChatBar extends React.Component {
   render() {
     return (
         <div>
-{   this.state.isEmail &&
-          <div className="toolTip" >
-            EMAIL 🐱
-          </div>
-        }
-
-
           <h4>Leave a Comment</h4>
           <form onSubmit={this.mySubmitHandler}>
             <label>Your name
             <input
+         
 
           //  onClick={style={background: yellow}}
           //  onClick={this.handleMouseHover}
@@ -114,10 +108,16 @@ export default class ChatBar extends React.Component {
 
           //  onClick={this.handleMouseHover}
           //  onClick={this.handleMouseHover}
+          className="email-input"
               type="text"
               name="email"
               ref={(node) => (this.refInputEmail = node)}
             />
+            {   this.state.isEmail &&
+          <div id="toolTip" >
+          Please fill out this field
+          </div>
+         }
             </label>
             
             <label>Your message

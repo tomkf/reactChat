@@ -145,4 +145,38 @@ textarea {
   display: block;
 }
 
+#toolTip{
+  position: absolute;
+  margin-left: 2px;
+  font-size: 12px;
+  background-color: #272020;
+  color: white;
+  height: 15px;
+  border-radius: 5px;
+  width: 127px;
+  padding-top: 6px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0.9;
+  text-shadow: -1px 1px 17px;
+  z-index: 22;}
+
+#test{       
+  position: absolute;
+  margin-left: 2px;
+  font-size: 12px;
+  background-color: #272020;
+  color: white;
+  height: 15px;
+  border-radius: 5px;
+  width: 127px;
+  padding-top: 6px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0.9;
+  text-shadow: -1px 1px 17px;
+  z-index: 22;
+}
 
