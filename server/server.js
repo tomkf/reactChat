@@ -51,6 +51,16 @@ app.get("/createpoststable", (req, res) => {
 //   });
 // });
 
+// app.get('/api/customers', (req, res) => {
+//     const customers = [
+//       {id: 1, name: 'Joe Blogs', email: 'jblogs@gmail.com', content: "Interesting post Phil. It's great to see that a blog really can come alive when the comments update in real-time. The commenting system becomes a conversation platform.", stamp: "July 30 2019" },
+//       {id: 2, name: 'Phil Leggetter', email: 'leggeter1981@shaw.ca', content: "Thanks Joe (great name by the way). I'm pleased you see the benefits of adding realtime functionality to a commenting system. It really can draw users in and turn a standard blogpost into a place where conversation takes place. Old style commenting is still great, but real-time comments are really engaging and can make a page much more sticky and engaging.", stamp: July 30 2019 },
+//       {id: 3, name: 'Max Williams', email: 'maxWill@gmail.com', content: "Phil - great post. Keep up the good work.", stamp: July 30 2019 },
+//     ];
+
+//     res.json(customers);
+//   });
+
 const server = app.listen(PORT, () => {
   console.log(`WebSocket Server Running on Port: ${PORT}`);
 });
