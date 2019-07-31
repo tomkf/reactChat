@@ -6,6 +6,7 @@ export default class ChatBar extends React.Component {
    constructor(props) {
      super(props);
      this.state = {
+       bgcolor: "",
        isEmail: false     };
      }
 
@@ -83,6 +84,17 @@ export default class ChatBar extends React.Component {
     this.refInputMessage.value = ""
   }
 
+  handleHover = event => {
+this.setState({
+  bgcolor: "#ffffdb"
+})
+  }
+
+  handleHoverAway = event => {
+    this.setState({
+      bgcolor: ""
+    })
+  }
 
 
 
@@ -91,24 +103,23 @@ export default class ChatBar extends React.Component {
         <div>
           <h4>Leave a Comment</h4>
           <form onSubmit={this.mySubmitHandler}>
-            <label>Your name
+            <label>Your name <small>*</small>
             <input
-         
-
-          //  onClick={style={background: yellow}}
-          //  onClick={this.handleMouseHover}
+             onMouseEnter={this.handleHover}
+             onMouseLeave={this.handleHoverAway}
+             style={{backgroundColor: this.state.bgcolor}}
               type="text"
               name="name"
               ref={(node) => (this.refInputName = node)} 
             />
 
             </label>
-            <label>Your email
+            <label>Your email <small>*</small>
             <input
-
-          //  onClick={this.handleMouseHover}
-          //  onClick={this.handleMouseHover}
-          className="email-input"
+             onMouseEnter={this.handleHover}
+             onMouseLeave={this.handleHoverAway}
+            className="email-input"
+            style={{backgroundColor: this.state.bgcolor}}
               type="text"
               name="email"
               ref={(node) => (this.refInputEmail = node)}
@@ -119,7 +130,6 @@ export default class ChatBar extends React.Component {
           </div>
          }
             </label>
-            
             <label>Your message
             <textarea ref={(node) => (this.refInputMessage = node)} /> 
             </label>
