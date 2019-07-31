@@ -11,13 +11,15 @@ a{
     background: #f6ecec;
     color: rgb(60, 60, 60);
     font-family: 'Open Sans', sans-serif;
-    font-size: 17px;
     margin: 70px 0;
+    font-size: 14px;
+    font-weight: 500;
   }
 
 .chat-bar{
   align-items: center;
 }
+
 
   .chatbar-message,
   .chatbar-username {
@@ -93,22 +95,6 @@ a{
   }
 
    .content-box {
-//     background: white;
-//     margin: auto;
-//     padding: 2%;
-//     width: 78%;
-//     height: 88%;
-//     border-radius: 10px;
-//     margin-top: -58px;
-
-
-// background: white;
-// margin: auto;
-// padding: 2%;
-// width: 78%;
-// height: 88%;
-// border-radius: 10px;
-
 background: white;
 margin: auto;
 padding: 2%;
@@ -116,7 +102,6 @@ width: 78%;
 height: 88%;
 border-radius: 10px;
 margin-top: -58px;
-
  }
  
 .submit-button {
@@ -139,6 +124,7 @@ form {
   font-size: 14px;
   line-height: 24px;
   border-radius: 10px;
+  
 }
 
 input {
@@ -147,6 +133,8 @@ input {
   border: 1px solid #999;
   height: 15px;
   margin-bottom: 6px;
+  font-weight: light;
+
 }
 
 textarea {
