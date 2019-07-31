@@ -58,6 +58,7 @@ a{
   }
 
 
+
   .message-content,
   .message-username {
     overflow: hidden;
@@ -91,14 +92,32 @@ a{
     margin: 30%;
   }
 
-  .content-box {
+   .content-box {
+//     background: white;
+//     margin: auto;
+//     padding: 2%;
+//     width: 78%;
+//     height: 88%;
+//     border-radius: 10px;
+//     margin-top: -58px;
+
+
+// background: white;
+// margin: auto;
+// padding: 2%;
+// width: 78%;
+// height: 88%;
+// border-radius: 10px;
+
 background: white;
 margin: auto;
 padding: 2%;
 width: 78%;
 height: 88%;
-border-radius: 6px;
-}
+border-radius: 10px;
+margin-top: -58px;
+
+ }
  
 .submit-button {
   margin-top: -9px;
