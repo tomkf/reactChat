@@ -1,22 +1,29 @@
-Usage
-Install the dependencies in both the root folder and again in the server directory. Start websocket server start app server
+### Usage
+ Install the dependencies in both the root folder and again in the server directory.
+Start websocket server, start app server. Use these commands:
 
+```
 npm install
 
 cd server
-npm install (server side dependencies)
+npm install
 npm start
+```
 
 open a new terminal tab:
+
+```
 cd ..
 npm start
+```
 
 type in http://localhost:3000 on the browser
 
 
-
-
-
+<br>
+<br>
+<br>
+<br>
 
 
 ### React Boilerplate
