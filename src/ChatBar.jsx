@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default class ChatBar extends React.Component {
-//       isName: "Anonymous"
-
    constructor(props) {
      super(props);
      this.state = {
@@ -45,25 +43,10 @@ export default class ChatBar extends React.Component {
   }
 
 
-// assignName(){
-//   this.setState(this.setName)
-// }
-
-// setName(state){
-//   return {
-//     isName: this.refInputName.value
-//   }
-// }
-
-
 
   mySubmitHandler = event => {
     event.preventDefault();
     const inputName = this.refInputName.value
-
-    //  if (this.refInputName.value !== ""){
-    //    this.assignName()
-    //  }
 
 
     const inputEmail = this.refInputEmail.value;
@@ -95,8 +78,6 @@ this.setState({
       bgcolor: ""
     })
   }
-
-
 
   render() {
     return (
@@ -141,71 +122,3 @@ this.setState({
       )
   };
 };
-
-
-
-
-
-
-
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       myName: null,
-//       myEmail: null,
-//      myStamp: null,
-//      myContent: null
-//     };
-
-//  mySubmitHandler = event => {
-//    event.preventDefault();
-//    const message = {name: this.state.myName, email: this.state.myEmail, stamp: this.state.myStamp, content: this.state.myContent,}
-//  this.props.addMessage(message)
-//   }
-
-//   render() {
-//   return (
-//     <footer >
-//           <form onSubmit={this.mySubmitHandler}>
-//           <h1>Your name</h1>
-//           <input type="text" name="name" onChange={this.nameHandler} />
-//           <h1>Your email</h1>
-//           <input type="text" name="email" onChange={this.emailHandler} />
-//           <h1>Your message</h1>
-//           <textarea onChange={this.contentHandler} />
-//           <br />
-//           <input type="submit" />
-//         </form>
-//     </footer>
-//     )
-//   };
- //};
-
-//   render() {
-//     return (
-//         <footer>
-//           <form onSubmit={this.mySubmitHandler}>
-//             <h1>Your name</h1>
-//             <input
-//               type="text"
-//               name="name"
-//               ref={(node) => (this.refInputName = node)} // <-- ref
-//             />
-//             <h1>Your email</h1>
-//             <input
-//               type="text"
-//               name="email"
-//               ref={(node) => (this.refInputEmail = node)} // <-- ref
-//             />
-//             <h1>Your message</h1>
-//             <textarea ref={(node) => (this.refInputMessage = node)} /> // <-- ref
-//             <br />
-//             <input type="submit" />
-//           </form>
-//         </footer>
-//       )
-//   };
-// };
-
-
-
