@@ -9,7 +9,6 @@ class App extends Component {
       currentUser: {name: "Anonymous"},
       messages: [],
       numusers: 0,
-      //key: uuidv4(); --- this did nothing to solve error message
     };
   }
   sendMessage = newMessage => {
@@ -22,7 +21,7 @@ class App extends Component {
      name:  message.name,
      stamp: message.stamp,
      type:'incomingMessage',
-     key: uuidv4() //didn't help get rid of error message
+     key: uuidv4() 
     }
     this.sendMessage(newMessage);
   }
@@ -61,7 +60,6 @@ class App extends Component {
         this.setState({ numusers: serverMessage.numcon}, () => console.log(this.state))
           break;  
         default:
-        // show an error in the console if the message type is unknown
         console.log("Unknown event type " + data.type);
       }
     };
